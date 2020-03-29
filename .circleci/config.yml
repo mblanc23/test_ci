@@ -9,5 +9,5 @@ workflows:
   build:
     jobs:
       - cypress/run # "run" job comes from "cypress" orb
-	 record: true        # record results on Cypress Dashboard
+      record: true        # record results on Cypress Dashboard
        
