@@ -2,7 +2,7 @@
 
 context('Misc', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/commands/misc')
+    cy.visit('https://example.cypress.io/commands/misc')
   })
 
   it('.end() - end the command chain', () => {
@@ -36,18 +36,6 @@ context('Misc', () => {
     const isCircleOnWindows = Cypress.platform === 'win32' && Cypress.env('circle')
 
     if (isCircleOnWindows) {
-      cy.log('Skipping test on CircleCI')
-
-      return
-    }
-
-    // cy.exec problem on Shippable CI
-    // https://github.com/cypress-io/cypress/issues/6718
-    const isShippable = Cypress.platform === 'linux' && Cypress.env('shippable')
-
-    if (isShippable) {
-      cy.log('Skipping test on ShippableCI')
-
       return
     }
 

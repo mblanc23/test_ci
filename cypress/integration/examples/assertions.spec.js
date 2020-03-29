@@ -2,7 +2,7 @@
 
 context('Assertions', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/commands/assertions')
+    cy.visit('https://example.cypress.io/commands/assertions')
   })
 
   describe('Implicit Assertions', () => {
@@ -163,15 +163,6 @@ context('Assertions', () => {
       }
 
       assert.isObject(person, 'value is object')
-    })
-
-    it('retries the should callback until assertions pass', () => {
-      cy.get('#random-number')
-        .should(($div) => {
-          const n = parseFloat($div.text())
-
-          expect(n).to.be.gte(1).and.be.lte(10)
-        })
     })
   })
 })
